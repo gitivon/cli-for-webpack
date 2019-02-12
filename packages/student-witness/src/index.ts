@@ -1,5 +1,11 @@
-import { find } from 'lodash';
+import get from 'lodash/get';
 
+export class Test {
+  a = '2';
+}
 (async () => {
-  console.log(await Promise.resolve(find));
+  const { timeout } = await import('@/utils');
+  console.log(get({ a: { b: 5 } }, 'a.b'));
+  await timeout(3000);
+  console.log(new Test());
 })();

@@ -1,15 +1,20 @@
 import { Configuration } from 'webpack';
 import WorkboxPlugin from 'workbox-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import merge from 'webpack-merge';
 import path from 'path';
 import { argv } from 'yargs';
 
 process.env.APP_projectName = (argv.env as any).project;
-// console.log(process.env.APP_projectName);
-const config: Configuration = {
+process.env.APP_mode = (argv.env as any).mode;
+
+const config: Configuration = merge({
   mode: 'production',
   optimization: {
-    minimize: true,
+    splitChunks: {
+      chunks: "all",
+    }
   },
   plugins: [
     new WorkboxPlugin.GenerateSW({
@@ -25,5 +30,9 @@ const config: Configuration = {
       },
     ),
   ]
-};
+}, process.env.APP_mode == 'analytics' ? {
+  plugins: [
+    new BundleAnalyzerPlugin(),
+  ]
+} : {});
 export default config;

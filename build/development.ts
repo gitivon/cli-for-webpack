@@ -12,8 +12,11 @@ const config: Configuration = {
     hot: true,
     stats: 'errors-only',
     compress: true,
+    open: true,
+    overlay: true,
+    historyApiFallback: true,
   },
-  devtool: 'inline-source-map',
+  devtool: 'cheap-module-eval-source-map',
   plugins: [
     new WebpackBar(),
     new HotModuleReplacementPlugin(),
