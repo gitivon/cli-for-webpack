@@ -1,2 +1,5 @@
-const str: string = 'hello Ts';
-console.log(str);
+import { find } from 'lodash';
+
+(async () => {
+  console.log(await Promise.resolve(find));
+})();
