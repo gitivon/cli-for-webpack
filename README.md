@@ -1,6 +1,14 @@
-## tutorabc landingpage
+## landingpage
 
 ``` bash
-yarn start --env.project=student-witness
-yarn build --env.project=student-witness
+// 开发模式
+yarn start --env.project={project}
+// 构建打包
+yarn build --env.project={project}
+// 统计包体积
+yarn analytics --env.project={project}
+// 发布 stage
+yarn tag
+
+
 ```

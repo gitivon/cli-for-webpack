@@ -11,11 +11,7 @@ process.env.APP_mode = (argv.env as any).mode;
 
 const config: Configuration = merge({
   mode: 'production',
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-    }
-  },
+  stats: true,
   plugins: [
     new WorkboxPlugin.GenerateSW({
       // 这些选项帮助 ServiceWorkers 快速启用
