@@ -1,11 +1,11 @@
 Arguments: 
-  /Users/ivon.hua/.nvm/versions/node/v10.13.0/bin/node /Users/ivon.hua/.nvm/versions/node/v10.13.0/bin/yarn add @types/tslint -D
+  /Users/huaqingfeng/.nvm/versions/node/v10.13.0/bin/node /Users/huaqingfeng/.yarn/bin/yarn.js add @types/vue-property-decorator -D
 
 PATH: 
-  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ivon.hua/.nvm/versions/node/v10.13.0/bin:/Users/ivon.hua/.nvm/versions/node/v10.13.0/bin:/Users/ivon.hua/.nvm/versions/node/v8.9.4/bin:/usr/local/bin
+  /Users/huaqingfeng/.rvm/gems/ruby-2.0.0-p643/bin:/Users/huaqingfeng/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/huaqingfeng/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/huaqingfeng/.yarn/bin:/Users/huaqingfeng/.config/yarn/global/node_modules/.bin:/Users/huaqingfeng/.nvm/versions/node/v10.13.0/bin:/Users/huaqingfeng/others/AirBuy/vscode-plugins/sonar-scanner/bin:/Users/huaqingfeng/.deno/bin:/Applications/MAMP/bin/php/php5.6.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/opt/local/sbin:/Users/huaqingfeng/.composer/vendor/codeception/codeception:/Users/huaqingfeng/.rvm/bin
 
 Yarn version: 
-  1.12.3
+  1.13.0
 
 Node version: 
   10.13.0
@@ -14,13 +14,13 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2ftslint: Not found
-      at Request.params.callback [as _callback] (/Users/ivon.hua/.nvm/versions/node/v10.13.0/lib/node_modules/yarn/lib/cli.js:65894:18)
-      at Request.self.callback (/Users/ivon.hua/.nvm/versions/node/v10.13.0/lib/node_modules/yarn/lib/cli.js:129018:22)
+  Error: https://registry.yarnpkg.com/@types%2fvue-property-decorator: Not found
+      at Request.params.callback [as _callback] (/Users/huaqingfeng/.yarn/lib/cli.js:66255:18)
+      at Request.self.callback (/Users/huaqingfeng/.yarn/lib/cli.js:129397:22)
       at Request.emit (events.js:182:13)
-      at Request.<anonymous> (/Users/ivon.hua/.nvm/versions/node/v10.13.0/lib/node_modules/yarn/lib/cli.js:129990:10)
+      at Request.<anonymous> (/Users/huaqingfeng/.yarn/lib/cli.js:130369:10)
       at Request.emit (events.js:182:13)
-      at IncomingMessage.<anonymous> (/Users/ivon.hua/.nvm/versions/node/v10.13.0/lib/node_modules/yarn/lib/cli.js:129912:12)
+      at IncomingMessage.<anonymous> (/Users/huaqingfeng/.yarn/lib/cli.js:130291:12)
       at Object.onceWrapper (events.js:273:13)
       at IncomingMessage.emit (events.js:187:15)
       at endReadableNT (_stream_readable.js:1094:12)
@@ -36,8 +36,8 @@ npm manifest:
       "start": "TS_NODE_PROJECT=\"./build/tsconfig.json\" webpack-dev-server --env.NODE_ENV=development",
       "build": "TS_NODE_PROJECT=\"./build/tsconfig.json\" webpack --env.NODE_ENV=production",
       "analytics": "TS_NODE_PROJECT=\"./build/tsconfig.json\" webpack --env.NODE_ENV=production --env.mode=analytics",
-      "lint": "tslint",
-      "test": "echo \"Error: no test specified\" && exit 1"
+      "lint": "tslint -p tsconfig.json",
+      "test": "ts-node ./build/lint.ts"
     },
     "repository": {
       "type": "git",
@@ -64,6 +64,7 @@ npm manifest:
       "@types/lodash-webpack-plugin": "^0.11.3",
       "@types/node": "^11.9.0",
       "@types/raven-js": "^3.10.0",
+      "@types/vue": "^2.0.0",
       "@types/webpack": "^4.4.24",
       "@types/webpack-bundle-analyzer": "^2.13.0",
       "@types/webpack-dev-server": "^3.1.2",
@@ -78,11 +79,13 @@ npm manifest:
       "dotenv": "^6.2.0",
       "html-webpack-plugin": "^3.2.0",
       "lodash-webpack-plugin": "^0.11.5",
+      "preload-webpack-plugin": "^2.3.0",
       "ts-loader": "^5.3.3",
       "ts-node": "^8.0.2",
       "tsconfig-paths": "^3.8.0",
       "tslint": "^5.12.1",
       "typescript": "^3.3.3",
+      "vue-property-decorator": "^7.3.0",
       "webpack": "^4.29.3",
       "webpack-bundle-analyzer": "^3.0.4",
       "webpack-cli": "^3.2.3",
@@ -96,7 +99,8 @@ npm manifest:
       "@types/reflect-metadata": "^0.1.0",
       "lodash": "^4.17.11",
       "raven-js": "^3.27.0",
-      "reflect-metadata": "^0.1.13"
+      "reflect-metadata": "^0.1.13",
+      "vue": "^2.6.6"
     }
   }
 
@@ -968,6 +972,13 @@ Lockfile:
     integrity sha512-SudIN9TRJ+v8g5pTG8RRCqfqTMNqgWCKKd3vtynhGzkIIjxaicNAMuY5TRadJ6tzDu3Dotf3ngaMILtmOdmWEQ==
     dependencies:
       source-map "^0.6.1"
+  
+  "@types/vue@^2.0.0":
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/@types/vue/-/vue-2.0.0.tgz#ec77b3d89591deb9ca5cb052368aa9c32be088e7"
+    integrity sha1-7Hez2JWR3rnKXLBSNoqpwyvgiOc=
+    dependencies:
+      vue "*"
   
   "@types/webpack-bundle-analyzer@^2.13.0":
     version "2.13.0"
@@ -2188,7 +2199,7 @@ Lockfile:
       execa "^0.10.0"
       ip-regex "^2.1.0"
   
-  define-properties@^1.1.2:
+  define-properties@^1.1.2, define-properties@^1.1.3:
     version "1.1.3"
     resolved "https://registry.yarnpkg.com/define-properties/-/define-properties-1.1.3.tgz#cf88da6cbee26fe6db7094f61d870cbd84cee9f1"
     integrity sha512-3MqfYKj2lLzdMSf8ZIZE/V+Zuy+BgD6f164e8K2w7dgnpKArBDerGYpM46IYYcjnkdPNMjPk9A6VFB8+3SKlXQ==
@@ -2444,7 +2455,7 @@ Lockfile:
     dependencies:
       prr "~1.0.1"
   
-  es-abstract@^1.5.1:
+  es-abstract@^1.12.0, es-abstract@^1.5.1:
     version "1.13.0"
     resolved "https://registry.yarnpkg.com/es-abstract/-/es-abstract-1.13.0.tgz#ac86145fdd5099d8dd49558ccba2eaf9b88e24e9"
     integrity sha512-vDZfg/ykNxQVwup/8E1BZhVzFfBxs9NqMzGcvIJrqg5k2/5Za2bWo40dK2J1pgLngZ7c+Shh8lwYtLGyrwPutg==
@@ -4155,7 +4166,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
     integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
   
-  object-assign@^4.0.1, object-assign@^4.1.0:
+  object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
     version "4.1.1"
     resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
     integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
@@ -4195,6 +4206,16 @@ Lockfile:
     integrity sha1-h6EKxMFpS9Lhy/U1kaZhQftd10c=
     dependencies:
       isobject "^3.0.1"
+  
+  object.values@^1.0.4:
+    version "1.1.0"
+    resolved "https://registry.yarnpkg.com/object.values/-/object.values-1.1.0.tgz#bf6810ef5da3e5325790eaaa2be213ea84624da9"
+    integrity sha512-8mf0nKLAoFX6VlNVdhGj31SVYpaNFtUnuoOXWyFEstsWRgU837AK+JYM0iAxwkSzGRbwn8cbFmgbyxj1j4VbXg==
+    dependencies:
+      define-properties "^1.1.3"
+      es-abstract "^1.12.0"
+      function-bind "^1.1.1"
+      has "^1.0.3"
   
   obuf@^1.0.0, obuf@^1.1.2:
     version "1.1.2"
@@ -4493,6 +4514,14 @@ Lockfile:
     version "0.1.1"
     resolved "https://registry.yarnpkg.com/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
     integrity sha1-AerA/jta9xoqbAL+q7jB/vfgDqs=
+  
+  preload-webpack-plugin@^2.3.0:
+    version "2.3.0"
+    resolved "https://registry.yarnpkg.com/preload-webpack-plugin/-/preload-webpack-plugin-2.3.0.tgz#2923d8caff44dead93d1fe5eaab31f3b18ca0de9"
+    integrity sha512-TWpYf7QqmW9lxXIQcPAPkfO+G6Zf/WrSZtqx864IdUtqZ+QGESfOGbGSMlBBt96sYEE+cZLF2GLrxbmLyieX6g==
+    dependencies:
+      object-assign "^4.1.1"
+      object.values "^1.0.4"
   
   pretty-bytes@^4.0.2:
     version "4.0.2"
@@ -5734,6 +5763,23 @@ Lockfile:
     integrity sha1-XX6kW7755Kb/ZflUOOCofDV9WnM=
     dependencies:
       indexof "0.0.1"
+  
+  vue-class-component@^6.2.0:
+    version "6.3.2"
+    resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-6.3.2.tgz#e6037e84d1df2af3bde4f455e50ca1b9eec02be6"
+    integrity sha512-cH208IoM+jgZyEf/g7mnFyofwPDJTM/QvBNhYMjqGB8fCsRyTf68rH2ISw/G20tJv+5mIThQ3upKwoL4jLTr1A==
+  
+  vue-property-decorator@^7.3.0:
+    version "7.3.0"
+    resolved "https://registry.yarnpkg.com/vue-property-decorator/-/vue-property-decorator-7.3.0.tgz#d50d67f0b0f1c814f9f2fba36d6eeccbcc62dbb6"
+    integrity sha512-HarXfTQ/Nxm4s/APpAaGIGHq5ZzslApImQy8ZrtkfGamw8rUFAVgMS5C50/AQ80+wfw3Wpnf4bNzbmj75m/k2Q==
+    dependencies:
+      vue-class-component "^6.2.0"
+  
+  vue@*, vue@^2.6.6:
+    version "2.6.6"
+    resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.6.tgz#dde41e483c11c46a7bf523909f4f2f816ab60d25"
+    integrity sha512-Y2DdOZD8sxApS+iUlwv1v8U1qN41kq6Kw45lM6nVZKhygeWA49q7VCCXkjXqeDBXgurrKWkYQ9cJeEJwAq0b9Q==
   
   watchpack@^1.5.0:
     version "1.6.0"

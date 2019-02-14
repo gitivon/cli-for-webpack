@@ -1,17 +1,20 @@
 import path from 'path';
 import fs from 'fs';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { configInit } from '../components/config/init';
 
 // HtmlWebpackPlugin
 export const HtmlWebpackPluginHelper = (projectName: string, entry: WebpackEntry): HtmlWebpackPlugin[] => {
+  const envConfig = configInit(projectName);
   const dir = path.resolve(__dirname, `../packages/${projectName}/src/`);
   const dirFiles = fs.readdirSync(dir);
   // 获取 src 下的 js
   const options: HtmlWebpackPlugin.Options[] = Object.keys(entry).map(chunk => {
     const filename = `${chunk}.html`;
     return {
-      chunks: [chunk],
-      template: dirFiles.includes(filename) ? `${dir}/${filename}` : path.resolve(__dirname, 'index.html'),
+      title: envConfig.TITLE || 'TutorABC',
+      chunks: [chunk, `vendors~${chunk}`],
+      template: dirFiles.indexOf(filename) >= 0 ? `${dir}/${filename}` : path.resolve(__dirname, 'index.html'),
       filename: filename,
     }
   });
@@ -31,7 +34,7 @@ export const getWebpackEntriesHelper = (projectName: string, pathname = 'src'): 
   // 获取 src 下的 js
   return dirFiles
     .filter((file => 
-      ['.ts', '.js'].includes(path.extname(file))
+      ['.ts', '.js'].indexOf(path.extname(file)) >= 0
     ))
     .reduce((current, val, index) => ({
       ...current,

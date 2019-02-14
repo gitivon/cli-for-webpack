@@ -21,6 +21,7 @@
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-decorators": "^7.3.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-syntax-jsx": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.1",
@@ -35,6 +36,7 @@
     "@types/lodash-webpack-plugin": "^0.11.3",
     "@types/node": "^11.9.0",
     "@types/raven-js": "^3.10.0",
+    "@types/vue": "^2.0.0",
     "@types/webpack": "^4.4.24",
     "@types/webpack-bundle-analyzer": "^2.13.0",
     "@types/webpack-dev-server": "^3.1.2",
@@ -42,6 +44,8 @@
     "@types/webpackbar": "^2.6.0",
     "@types/workbox-webpack-plugin": "^3.6.0",
     "@types/yargs": "^12.0.8",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0-beta.2",
+    "@vue/babel-preset-jsx": "^1.0.0-beta.2",
     "babel-loader": "^8.0.5",
     "babel-plugin-lodash": "^3.3.4",
     "clean-webpack-plugin": "^1.0.1",
@@ -49,11 +53,13 @@
     "dotenv": "^6.2.0",
     "html-webpack-plugin": "^3.2.0",
     "lodash-webpack-plugin": "^0.11.5",
+    "preload-webpack-plugin": "^2.3.0",
     "ts-loader": "^5.3.3",
     "ts-node": "^8.0.2",
     "tsconfig-paths": "^3.8.0",
     "tslint": "^5.12.1",
     "typescript": "^3.3.3",
+    "vue-property-decorator": "^7.3.0",
     "webpack": "^4.29.3",
     "webpack-bundle-analyzer": "^3.0.4",
     "webpack-cli": "^3.2.3",
@@ -67,6 +73,7 @@
     "@types/reflect-metadata": "^0.1.0",
     "lodash": "^4.17.11",
     "raven-js": "^3.27.0",
-    "reflect-metadata": "^0.1.13"
+    "reflect-metadata": "^0.1.13",
+    "vue": "^2.6.6"
   }
 }

@@ -16,6 +16,7 @@ export default {
           "node": 8
         } 
       }
-    ]
+    ],
+    "@vue/babel-preset-jsx"
   ]
 }
