@@ -7,7 +7,8 @@
     "start": "TS_NODE_PROJECT=\"./build/tsconfig.json\" webpack-dev-server --env.NODE_ENV=development",
     "build": "TS_NODE_PROJECT=\"./build/tsconfig.json\" webpack --env.NODE_ENV=production",
     "analytics": "TS_NODE_PROJECT=\"./build/tsconfig.json\" webpack --env.NODE_ENV=production --env.mode=analytics",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "tslint -p tsconfig.json",
+    "test": "ts-node ./build/lint.ts"
   },
   "repository": {
     "type": "git",
@@ -51,6 +52,7 @@
     "ts-loader": "^5.3.3",
     "ts-node": "^8.0.2",
     "tsconfig-paths": "^3.8.0",
+    "tslint": "^5.12.1",
     "typescript": "^3.3.3",
     "webpack": "^4.29.3",
     "webpack-bundle-analyzer": "^3.0.4",

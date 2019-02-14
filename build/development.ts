@@ -12,7 +12,7 @@ const config: Configuration = {
     hot: true,
     stats: 'errors-only',
     compress: true,
-    open: true,
+    // open: true,
     overlay: true,
     historyApiFallback: true,
   },

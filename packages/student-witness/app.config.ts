@@ -1,6 +1,7 @@
-import path from 'path';
-import { AppPackageConfig } from '../../build/app';
+import { Config } from '../../components/config';
+import { AppGlobalConfig } from '../../components/config/global.config';
 
-const appConfig: AppPackageConfig = {
-};
-export default appConfig;
+export class AppConfig extends AppGlobalConfig {
+
+  @Config() AUTO!: boolean;
+}
