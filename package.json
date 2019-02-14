@@ -30,8 +30,10 @@
     "@types/clean-webpack-plugin": "^0.1.2",
     "@types/dotenv": "^6.1.0",
     "@types/html-webpack-plugin": "^3.2.0",
+    "@types/lodash": "^4.14.120",
     "@types/lodash-webpack-plugin": "^0.11.3",
     "@types/node": "^11.9.0",
+    "@types/raven-js": "^3.10.0",
     "@types/webpack": "^4.4.24",
     "@types/webpack-bundle-analyzer": "^2.13.0",
     "@types/webpack-dev-server": "^3.1.2",
@@ -60,7 +62,9 @@
     "yargs": "^13.1.0"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.120",
-    "lodash": "^4.17.11"
+    "@types/reflect-metadata": "^0.1.0",
+    "lodash": "^4.17.11",
+    "raven-js": "^3.27.0",
+    "reflect-metadata": "^0.1.13"
   }
 }

@@ -8,6 +8,7 @@ import path from 'path';
 import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
 import { AppPackageConfig } from './build/app';
 import { HtmlWebpackPluginHelper, getWebpackEntriesHelper } from './build/helpers';
+import { configInit } from './components/config/init';
 
 process.env.APP_projectName = (argv.env as any).project;
 process.env.NODE_ENV = (argv.env as any).NODE_ENV;
@@ -18,6 +19,9 @@ if (!process.env.APP_projectName) {
 
 const app: AppPackageConfig = require(`./packages/${process.env.APP_projectName}/app.config`).default;
 const entry = getWebpackEntriesHelper(process.env.APP_projectName);
+// 设置 process.env
+const envConfig = configInit(process.env.APP_projectName);
+// 写入definePlugin
 
 const config: Configuration = merge({
   entry,
@@ -28,7 +32,9 @@ const config: Configuration = merge({
   },
   plugins: [
     ...HtmlWebpackPluginHelper(process.env.APP_projectName, entry),
-    new DefinePlugin({}),
+    new DefinePlugin({
+      'process.env': JSON.stringify(envConfig),
+    }),
     new LodashModuleReplacementPlugin({
       'collections': true,
       'paths': true
@@ -37,6 +43,7 @@ const config: Configuration = merge({
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
+      '/': path.resolve(__dirname),
       '@': path.resolve(__dirname, `packages/${process.env.APP_projectName}/src`)
     }
   },
