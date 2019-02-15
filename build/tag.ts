@@ -1,1 +1,1 @@
-console.log('post-tag');
+console.log('post-tag', process.argv);
