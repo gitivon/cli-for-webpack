@@ -11,7 +11,7 @@
     "test": "ts-node ./build/lint.ts",
     "pre-push": "ts-node ./build/tag.ts",
     "pre-commit": "ts-node ./build/tag.ts",
-    "ver": "conventional-changelog -p landingpage -i CHANGELOG.md -s -r 0"
+    "post-commit": "conventional-changelog -p landingpage -i CHANGELOG.md -s -r 0"
   },
   "repository": {
     "type": "git",
