@@ -1,6 +1,6 @@
 {
   "name": "landingpage",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,8 @@
     "lint": "tslint -p tsconfig.json",
     "test": "ts-node ./build/lint.ts",
     "pre-push": "ts-node ./build/tag.ts",
-    "pre-commit": "ts-node ./build/tag.ts"
+    "pre-commit": "ts-node ./build/tag.ts",
+    "ver": "conventional-changelog-write -p landingpage -i CHANGELOG.md -s -r 0"
   },
   "repository": {
     "type": "git",
@@ -52,6 +53,7 @@
     "babel-loader": "^8.0.5",
     "babel-plugin-lodash": "^3.3.4",
     "clean-webpack-plugin": "^1.0.1",
+    "conventional-changelog": "^3.0.6",
     "cross-env": "^5.2.0",
     "dotenv": "^6.2.0",
     "html-webpack-plugin": "^3.2.0",
