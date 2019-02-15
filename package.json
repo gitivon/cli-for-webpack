@@ -8,7 +8,8 @@
     "build": "TS_NODE_PROJECT=\"./build/tsconfig.json\" webpack --env.NODE_ENV=production",
     "analytics": "TS_NODE_PROJECT=\"./build/tsconfig.json\" webpack --env.NODE_ENV=production --env.mode=analytics",
     "lint": "tslint -p tsconfig.json",
-    "test": "ts-node ./build/lint.ts"
+    "test": "ts-node ./build/lint.ts",
+    "pre-push": "ts-node ./build/tag.ts"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "@types/lodash-webpack-plugin": "^0.11.3",
     "@types/node": "^11.9.0",
     "@types/raven-js": "^3.10.0",
+    "@types/reflect-metadata": "^0.1.0",
     "@types/vue": "^2.0.0",
     "@types/webpack": "^4.4.24",
     "@types/webpack-bundle-analyzer": "^2.13.0",
@@ -68,10 +70,10 @@
     "webpack-merge": "^4.2.1",
     "webpackbar": "^3.1.5",
     "workbox-webpack-plugin": "^3.6.3",
-    "yargs": "^13.1.0"
+    "yargs": "^13.1.0",
+    "yorkie": "^2.0.0"
   },
   "dependencies": {
-    "@types/reflect-metadata": "^0.1.0",
     "lodash": "^4.17.11",
     "raven-js": "^3.27.0",
     "reflect-metadata": "^0.1.13",
