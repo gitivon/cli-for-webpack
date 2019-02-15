@@ -9,7 +9,8 @@
     "analytics": "TS_NODE_PROJECT=\"./build/tsconfig.json\" webpack --env.NODE_ENV=production --env.mode=analytics",
     "lint": "tslint -p tsconfig.json",
     "test": "ts-node ./build/lint.ts",
-    "pre-push": "ts-node ./build/tag.ts"
+    "pre-push": "ts-node ./build/tag.ts",
+    "pre-commit": "ts-node ./build/tag.ts"
   },
   "repository": {
     "type": "git",
