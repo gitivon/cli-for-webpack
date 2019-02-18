@@ -1,6 +1,8 @@
 {
   "modules": true,
   "plugins": {
-    "autoprefixer": true
+    "autoprefixer": {
+      browsers: 'last 5 version'
+    }
   }
 }

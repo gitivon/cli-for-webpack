@@ -103,6 +103,12 @@ const config: Configuration = merge(
             },
           ],
         },
+        {
+          test: /\.(png|jpg|gif)$/,
+          use: [
+            { loader: 'file-loader' },
+          ]
+        },
       ],
     },
   },

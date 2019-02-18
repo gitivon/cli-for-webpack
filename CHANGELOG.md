@@ -1,5 +1,6 @@
 ## <small>1.0.4 (2019-02-18)</small>
 
+* ci: prettier ([dc011a8](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/dc011a8))
 * ci(package.json): changelog setting ([9afae20](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/9afae20))
 * ?? ([b3586ee](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/b3586ee))
 * changelog? ([8c20403](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/8c20403))
