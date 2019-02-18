@@ -6,7 +6,10 @@ export const configInit = (project: string) => {
   const globalPath = resolve(__dirname, `../../.env`);
   const defaultPath = resolve(__dirname, `${dir}.env`);
   const path = resolve(__dirname, `${dir}.env.${process.env.NODE_ENV}`);
-  const localPath = resolve(__dirname, `${dir}.env.${process.env.NODE_ENV}.local`);
+  const localPath = resolve(
+    __dirname,
+    `${dir}.env.${process.env.NODE_ENV}.local`,
+  );
   const { AppConfig } = require(`${dir}app.config`);
   dotenv.config({ path: localPath });
   dotenv.config({ path });
@@ -15,4 +18,4 @@ export const configInit = (project: string) => {
   const cfg = new AppConfig();
   cfg.parse(process.env);
   return cfg;
-}
+};

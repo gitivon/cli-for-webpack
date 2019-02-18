@@ -1,9 +1,0 @@
-{
-  "extends": [
-    "plugin:prettier/recommended"
-  ],
-  "rules": {
-    "no-console": true,
-    "singleQuote": true
-  }
-}

@@ -1,0 +1,21 @@
+{
+  "defaultSeverity": "error",
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-console": true,
+    "quotes": [
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ]
+  },
+  "linterOptions": {
+    "exclude": [
+      "./node_modules/**"
+    ]
+  }
+}

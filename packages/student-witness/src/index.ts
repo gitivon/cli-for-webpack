@@ -9,7 +9,6 @@ new Vue({
   template: '<App />',
 });
 
-
 // export class Test {
 //   a = '2';
 // }
@@ -23,4 +22,3 @@ new Vue({
 //   // debugger();
 
 // })();
-

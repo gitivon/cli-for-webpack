@@ -23,7 +23,7 @@ export class ConfigParseError extends Error {
 export class ConfigParse {
   [key: string]: any;
 
-  public parse(parsed: any) {
+  public parse(parsed: { [key: string]: string | undefined }) {
     // check required property
     const needCheckedProperties = Reflect.getMetadata('_required', this) || [];
     for (const property of needCheckedProperties) {
@@ -32,7 +32,7 @@ export class ConfigParse {
       }
     }
 
-    forEach(parsed, (val: string, key: string) => {
+    forEach(parsed, (val: string | undefined, key: string) => {
       const type = Reflect.getMetadata('design:type', this, key);
       if (type) {
         switch (type) {
@@ -40,13 +40,13 @@ export class ConfigParse {
             this[key] = val;
             break;
           case Number:
-            this[key] = parseInt(val, 10);
+            this[key] = parseInt(val || '0', 10);
             break;
           case Array:
-            this[key] = val.split(',');
+            this[key] = (val || '').split(',');
             break;
           case Boolean:
-            this[key] = !(val.toUpperCase() === 'FALSE' || val === '0');
+            this[key] = !((val || 'false').toUpperCase() === 'FALSE' || val === '0');
             break;
           default:
             const fn = Reflect.getMetadata('configFn', this, key);

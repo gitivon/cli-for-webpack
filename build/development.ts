@@ -18,9 +18,6 @@ const config: Configuration = {
     historyApiFallback: true,
   },
   devtool: 'cheap-module-eval-source-map',
-  plugins: [
-    new WebpackBar(),
-    new HotModuleReplacementPlugin(),
-  ]
+  plugins: [new WebpackBar(), new HotModuleReplacementPlugin()],
 };
 export default config;

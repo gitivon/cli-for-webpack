@@ -1,4 +1,2 @@
-export const timeout = (t: number) => 
-  new Promise((resolve) => 
-    setTimeout(resolve, t)
-  );
+export const timeout = (t: number) =>
+  new Promise((resolve) => setTimeout(resolve, t));

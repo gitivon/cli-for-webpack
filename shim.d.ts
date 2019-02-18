@@ -14,4 +14,3 @@ declare module 'preload-webpack-plugin' {
   const content: PreloadWebpackPlugin;
   export default content;
 }
-
