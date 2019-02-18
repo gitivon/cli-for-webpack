@@ -6,5 +6,5 @@ export class AppConfig extends AppGlobalConfig {
   @Config() AUTO!: boolean;
 }
 
-export const config = new AppConfig();
-config.parse(process.env);
+// export const config = new AppConfig();
+// config.parse(process.env);

@@ -14,6 +14,8 @@ import {
 import { configInit } from './components/config/init';
 // @ts-ignore
 import PreloadWebpackPlugin from 'preload-webpack-plugin';
+import cssLoader from './build/css-loader';
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 process.env.APP_projectName = (argv.env as any).project;
 process.env.NODE_ENV = (argv.env as any).NODE_ENV;
@@ -26,23 +28,20 @@ if (!process.env.APP_projectName) {
 
 // const app: AppPackageConfig = require(`./packages/${process.env.APP_projectName}/app.config`).default;
 const entry = Object.assign(
-  {
-    global: path.resolve(__dirname, './components/global/index.ts'),
-  },
   getWebpackEntriesHelper(process.env.APP_projectName),
 );
 // 设置 process.env
 const envConfig = configInit(process.env.APP_projectName);
 // 写入definePlugin
 
+const hashName = process.env.NODE_ENV !== 'development' ? '.[chunkhash:8]' : '';
+
 const config: Configuration = merge(
   {
     entry,
     stats: 'errors-only',
     output: {
-      filename: `[name]${
-        process.env.NODE_ENV !== 'development' ? '.[chunkhash:8]' : ''
-      }.js`,
+      filename: `[name]${hashName}.js`,
       path: path.resolve(__dirname, `dist/${process.env.APP_projectName}`),
     },
     plugins: [
@@ -58,6 +57,12 @@ const config: Configuration = merge(
         collections: true,
         paths: true,
       }),
+      new MiniCssExtractPlugin({
+        // Options similar to the same options in webpackOptions.output
+        // both options are optional
+        filename: `[name]${hashName}.css`,
+        chunkFilename: `[id]${hashName}.css`,
+      }),
     ],
     resolve: {
       extensions: ['.tsx', '.ts', '.js', '.jsx'],
@@ -71,6 +76,7 @@ const config: Configuration = merge(
     },
     module: {
       rules: [
+        ...cssLoader(process.env),
         {
           test: /\.tsx?$/,
           exclude: /node_modules/,

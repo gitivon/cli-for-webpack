@@ -46,7 +46,9 @@ export class ConfigParse {
             this[key] = (val || '').split(',');
             break;
           case Boolean:
-            this[key] = !((val || 'false').toUpperCase() === 'FALSE' || val === '0');
+            this[key] = !(
+              (val || 'false').toUpperCase() === 'FALSE' || val === '0'
+            );
             break;
           default:
             const fn = Reflect.getMetadata('configFn', this, key);
