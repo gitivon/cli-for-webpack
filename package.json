@@ -7,13 +7,12 @@
     "start": "TS_NODE_PROJECT=\"./build/tsconfig.json\" webpack-dev-server --env.NODE_ENV=development",
     "build": "TS_NODE_PROJECT=\"./build/tsconfig.json\" webpack --env.NODE_ENV=production",
     "analytics": "TS_NODE_PROJECT=\"./build/tsconfig.json\" webpack --env.NODE_ENV=production --env.mode=analytics",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "lint": "tslint -p tsconfig.json",
     "test": "ts-node ./build/lint.ts"
   },
   "gitHooks": {
-    "pre-push": "ts-node ./build/tag.ts",
-    "post-commit": "ts-node ./build/tag.ts",
-    "pre-commit": "conventional-changelog -p landingpage -i CHANGELOG.md -s -r 0"
+    "pre-commit": "npm run changelog"
   },
   "repository": {
     "type": "git",
