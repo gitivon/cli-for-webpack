@@ -1,3 +1,3 @@
-console.log('post-tag', process.argv);
+// console.log('post-tag', process.argv);
 
-process.exit(1);
+// process.exit(1);
