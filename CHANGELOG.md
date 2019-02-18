@@ -1,4 +1,4 @@
-## <small>1.0.2 (2019-02-18)</small>
+## <small>1.0.3 (2019-02-18)</small>
 
 * 1 ([ce8bfb0](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/ce8bfb0))
 * 1 ([4bb5c1a](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/4bb5c1a))
@@ -6,6 +6,7 @@
 * 1 ([496589a](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/496589a))
 * 1 test ([fd1f719](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/fd1f719))
 * 111 ([67dfe4d](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/67dfe4d))
+* 2 ([4ccce11](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/4ccce11))
 * up: package ([5a26f1c](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/5a26f1c))
 * chore: changelog add post-commit hook ([7a7d9ba](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/7a7d9ba))
 * add: conventional-changelog ([b668135](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/b668135))
