@@ -12,8 +12,8 @@
   },
   "gitHooks": {
     "pre-push": "ts-node ./build/tag.ts",
-    "pre-commit": "ts-node ./build/tag.ts",
-    "post-commit": "conventional-changelog -p landingpage -i CHANGELOG.md -s -r 0"
+    "post-commit": "ts-node ./build/tag.ts",
+    "pre-commit": "conventional-changelog -p landingpage -i CHANGELOG.md -s -r 0"
   },
   "repository": {
     "type": "git",
