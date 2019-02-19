@@ -42,7 +42,7 @@ export const getWebpackEntriesHelper = (
   const dirFiles = fs.readdirSync(dir);
   // 获取 src 下的 js
   return dirFiles
-    .filter((file) => ['.ts', '.js'].indexOf(path.extname(file)) >= 0)
+    .filter((file) => ['.ts', '.tsx', '.js', '.jsx'].indexOf(path.extname(file)) >= 0)
     .reduce(
       (current, val, index) => ({
         ...current,

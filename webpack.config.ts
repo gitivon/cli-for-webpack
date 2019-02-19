@@ -7,6 +7,7 @@ import { argv } from 'yargs';
 import path from 'path';
 import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
 import { AppPackageConfig } from './build/app';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import {
   HtmlWebpackPluginHelper,
   getWebpackEntriesHelper,
@@ -16,9 +17,12 @@ import { configInit } from './components/config/init';
 import PreloadWebpackPlugin from 'preload-webpack-plugin';
 import cssLoader from './build/css-loader';
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import createStyledComponentsTransformer from 'typescript-plugin-styled-components';
 
 process.env.APP_projectName = (argv.env as any).project;
 process.env.NODE_ENV = (argv.env as any).NODE_ENV;
+
+const styledComponentsTransformer = createStyledComponentsTransformer();
 
 if (!process.env.APP_projectName) {
   throw new ReferenceError(
@@ -63,6 +67,17 @@ const config: Configuration = merge(
         filename: `[name]${hashName}.css`,
         chunkFilename: `[id]${hashName}.css`,
       }),
+      new ForkTsCheckerWebpackPlugin({
+        checkSyntacticErrors: true,
+        // tsconfig: path.resolve(__dirname, 'tsconfig.json'),
+        // tslint: path.resolve(__dirname, 'tslint.json'),
+        watch: ['./**/src/**/*.tsx'],
+        // ignoreLints: [
+        //   'no-console',
+        //   'object-literal-sort-keys',
+        //   'quotemark',
+        // ],
+      }),
     ],
     resolve: {
       extensions: ['.tsx', '.ts', '.js', '.jsx'],
@@ -80,6 +95,7 @@ const config: Configuration = merge(
         {
           test: /\.tsx?$/,
           exclude: /node_modules/,
+          enforce: "pre",
           use: [
             {
               loader: 'babel-loader',
@@ -89,12 +105,13 @@ const config: Configuration = merge(
               loader: 'ts-loader',
               options: {
                 transpileOnly: true,
+                getCustomTransformers: () => ({ before: [styledComponentsTransformer] }),
               },
             },
           ],
         },
         {
-          test: /\.js$/,
+          test: /\.jsx$/,
           exclude: /node_modules/,
           use: [
             {
@@ -108,6 +125,10 @@ const config: Configuration = merge(
           use: [
             { loader: 'file-loader' },
           ]
+        },
+        {
+          test: /\.svg$/,
+          loader: '@svgr/webpack',
         },
       ],
     },

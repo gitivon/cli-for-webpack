@@ -5,8 +5,10 @@ export default {
     'lodash',
   ],
   presets: [
+    '@babel/react',
+    // "@babel/typescript",
     [
-      '@babel/env',
+      '@babel/preset-env',
       {
         modules: 'auto',
         useBuiltIns: 'usage',
@@ -16,6 +18,6 @@ export default {
         },
       },
     ],
-    '@vue/babel-preset-jsx',
+    // '@vue/babel-preset-jsx',
   ],
 };
