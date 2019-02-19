@@ -3,13 +3,12 @@
     Hello, {{a}}
   </h1>
 </template>
-<script>
-export default {
-  data() {
-    return {
-      a: 'Vue'
-    }
-  }
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator';
+
+@Component
+export default class App extends Vue {
+  public a: string = 'Vue';
 }
 </script>
 <style lang="less" scoped>

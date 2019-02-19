@@ -102,7 +102,6 @@ const config: Configuration = merge(
         {
           test: /\.tsx?$/,
           exclude: /node_modules/,
-          enforce: "pre",
           use: [
             {
               loader: 'babel-loader',

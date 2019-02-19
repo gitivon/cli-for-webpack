@@ -1,7 +1,8 @@
 ## <small>1.0.4 (2019-02-19)</small>
 
-* build: add styled-components ([00f338e](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/00f338e))
+* feat: add styled-components.d ([a8b9b7d](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/a8b9b7d))
 * feat(student-witness): cover page ([06febd2](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/06febd2))
+* build: add styled-components ([00f338e](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/00f338e))
 * chore: add less-loader ([6ef7b6d](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/6ef7b6d))
 * ci: prettier ([dc011a8](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/dc011a8))
 * ci(package.json): changelog setting ([9afae20](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/9afae20))
