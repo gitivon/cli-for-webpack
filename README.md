@@ -1,4 +1,12 @@
-## landingpage
+## a cli for multi project
+
+> 开箱即用项目脚手架，已支持 react vue 
+
+### todo
+
+[] htm
+[] angular
+
 
 ``` bash
 // 开发模式
