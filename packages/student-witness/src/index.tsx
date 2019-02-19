@@ -1,23 +1,35 @@
 // import get from 'lodash/get';
 // import { lib } from './utils/lib';
 // import '#/components/global';
-import './assets/style.less';
+// import './assets/style.less';
 // import { c } from '#/components/utils';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import Icon from '@/assets/more.svg';
+import styled from 'styled-components';
+
+const Page = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: #000;
+  color: #FFF;
+`;
 
 class App extends React.Component {
   render() {
     return (
-      <div className="page">
+      <Page>
         <h1>优秀学员故事</h1>
         <Icon width="37" height="35" />
-      </div>
+      </Page>
     )
   }
 }
-console.log(process.env);
+
 ReactDOM.render(
   <App />,
   document.getElementById('root')

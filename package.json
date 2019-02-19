@@ -70,6 +70,7 @@
     "conventional-changelog-cli": "^2.0.12",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.0",
+    "csstype": "^2.6.2",
     "dotenv": "^6.2.0",
     "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-prettier": "^3.0.1",

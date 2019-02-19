@@ -1,5 +1,6 @@
-## <small>1.0.4 (2019-02-18)</small>
+## <small>1.0.4 (2019-02-19)</small>
 
+* feat(student-witness): cover page ([06febd2](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/06febd2))
 * chore: add less-loader ([6ef7b6d](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/6ef7b6d))
 * ci: prettier ([dc011a8](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/dc011a8))
 * ci(package.json): changelog setting ([9afae20](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/9afae20))
