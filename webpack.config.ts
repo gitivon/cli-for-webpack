@@ -18,6 +18,9 @@ import PreloadWebpackPlugin from 'preload-webpack-plugin';
 import cssLoader from './build/css-loader';
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import createStyledComponentsTransformer from 'typescript-plugin-styled-components';
+import VueLoaders from './build/loaders/vue-loader';
+// @ts-ignore
+import VueLoaderPlugin from 'vue-loader/lib/plugin';
 
 process.env.APP_projectName = (argv.env as any).project;
 process.env.NODE_ENV = (argv.env as any).NODE_ENV;
@@ -78,20 +81,24 @@ const config: Configuration = merge(
         //   'quotemark',
         // ],
       }),
+      new VueLoaderPlugin(),
     ],
     resolve: {
-      extensions: ['.tsx', '.ts', '.js', '.jsx'],
+      extensions: ['.tsx', '.ts', '.js', '.jsx', '.vue'],
       alias: {
         '#': path.resolve(__dirname),
         '@': path.resolve(
           __dirname,
           `packages/${process.env.APP_projectName}/src`,
         ),
+        vue$: 'vue/dist/vue.runtime.esm.js',
       },
     },
     module: {
+      noParse: /^(vue|vue-router|vuex|vuex-router-sync)$/,
       rules: [
         ...cssLoader(process.env),
+        ...VueLoaders(process.env),
         {
           test: /\.tsx?$/,
           exclude: /node_modules/,
@@ -106,6 +113,9 @@ const config: Configuration = merge(
               options: {
                 transpileOnly: true,
                 getCustomTransformers: () => ({ before: [styledComponentsTransformer] }),
+                appendTsSuffixTo: [
+                  '\\.vue$'
+                ],
               },
             },
           ],
