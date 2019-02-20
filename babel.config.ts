@@ -1,12 +1,13 @@
-export default {
+import fs from 'fs';
+import path from 'path';
+
+const config = {
   plugins: [
     '@babel/transform-runtime',
     '@babel/plugin-syntax-dynamic-import',
     'lodash',
   ],
   presets: [
-    '@babel/react',
-    // "@babel/typescript",
     [
       '@babel/preset-env',
       {
@@ -18,6 +19,21 @@ export default {
         },
       },
     ],
-    // '@vue/babel-preset-jsx',
+    '@babel/react',
+    // "@babel/typescript",
   ],
+};
+
+export default (env: any) => {
+  const { APP_projectName } = env;
+  const babelConfig = path.resolve(
+    __dirname,
+    `packages/${APP_projectName}/babel.config.ts`,
+  );
+  if (fs.existsSync(babelConfig)) {
+    const getProjectBabelCfg = require(babelConfig).default;
+    return getProjectBabelCfg(config, env);
+  } else {
+    return config;
+  }
 };

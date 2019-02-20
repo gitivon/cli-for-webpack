@@ -2,9 +2,9 @@ const loaders = (env: any) => {
   return [
     {
       test: /\.vue$/,
-      loader: 'vue-loader'
-    }
-  ]
-}
+      loader: 'vue-loader',
+    },
+  ];
+};
 
 export default loaders;

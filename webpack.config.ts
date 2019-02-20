@@ -16,9 +16,10 @@ import { configInit } from './components/config/init';
 // @ts-ignore
 import PreloadWebpackPlugin from 'preload-webpack-plugin';
 import cssLoader from './build/css-loader';
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import createStyledComponentsTransformer from 'typescript-plugin-styled-components';
 import VueLoaders from './build/loaders/vue-loader';
+import assetsLoader from './build/loaders/assets-loader';
 // @ts-ignore
 import VueLoaderPlugin from 'vue-loader/lib/plugin';
 
@@ -99,22 +100,23 @@ const config: Configuration = merge(
       rules: [
         ...cssLoader(process.env),
         ...VueLoaders(process.env),
+        ...assetsLoader(process.env),
         {
           test: /\.tsx?$/,
           exclude: /node_modules/,
           use: [
             {
               loader: 'babel-loader',
-              options: babelConfig,
+              options: babelConfig(process.env),
             },
             {
               loader: 'ts-loader',
               options: {
                 transpileOnly: true,
-                getCustomTransformers: () => ({ before: [styledComponentsTransformer] }),
-                appendTsSuffixTo: [
-                  '\\.vue$'
-                ],
+                getCustomTransformers: () => ({
+                  before: [styledComponentsTransformer],
+                }),
+                appendTsxSuffixTo: ['\\.vue$'],
               },
             },
           ],
@@ -125,19 +127,9 @@ const config: Configuration = merge(
           use: [
             {
               loader: 'babel-loader',
-              options: babelConfig,
+              options: babelConfig(process.env),
             },
           ],
-        },
-        {
-          test: /\.(png|jpg|gif)$/,
-          use: [
-            { loader: 'file-loader' },
-          ]
-        },
-        {
-          test: /\.svg$/,
-          loader: '@svgr/webpack',
         },
       ],
     },
