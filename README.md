@@ -4,8 +4,9 @@
 
 ### todo
 
-[] htm
-[] angular
+[] htm  
+[] angular  
+[] yeoman  
 
 
 ``` bash
@@ -17,6 +18,7 @@ yarn build --env.project={project}
 yarn analytics --env.project={project}
 // 发布 stage
 yarn tag
-
+yarn prettier
+yarn lint
 
 ```
