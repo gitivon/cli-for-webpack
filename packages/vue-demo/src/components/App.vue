@@ -1,18 +1,15 @@
-<script lang="tsx">
+<template>
+  <div>
+    <h1>Hello, {{a}}</h1>
+  </div>
+</template>
+
+<script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 
 @Component
 export default class App extends Vue {
   public a: string = 'TSX';
-  public val: string = '';
-
-  render() {
-    return <div>
-      <h1>Hello, {this.a}</h1>
-      <p>Your input is: {this.val}</p>
-      <input type="text" vModel={this.val} />
-    </div>
-  }
 }
 </script>
 <style lang="less" scoped>

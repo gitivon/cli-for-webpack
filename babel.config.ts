@@ -19,6 +19,10 @@ const config = {
         },
       },
     ],
+    [
+      'react-app',
+      { flow: false, typescript: true }
+    ],
     '@babel/react',
     // "@babel/typescript",
   ],

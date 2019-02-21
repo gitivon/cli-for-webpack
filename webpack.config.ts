@@ -119,6 +119,7 @@ const config: Configuration = merge(
                 appendTsxSuffixTo: ['\\.vue$'],
               },
             },
+            'react-docgen-typescript-loader',
           ],
         },
         {

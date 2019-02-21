@@ -1,11 +1,12 @@
-## <small>1.0.4 (2019-02-19)</small>
+## <small>1.0.4 (2019-02-20)</small>
 
+* build: add styled-components ([00f338e](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/00f338e))
+* build(vue): support ts ([195dd23](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/195dd23))
 * ci: add vue-project ([013afbe](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/013afbe))
 * ci: prettier ([dc011a8](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/dc011a8))
 * ci(package.json): changelog setting ([9afae20](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/9afae20))
 * feat: add styled-components.d ([a8b9b7d](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/a8b9b7d))
 * feat(student-witness): cover page ([06febd2](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/06febd2))
-* build: add styled-components ([00f338e](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/00f338e))
 * chore: add less-loader ([6ef7b6d](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/6ef7b6d))
 * ?? ([b3586ee](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/b3586ee))
 * changelog? ([8c20403](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/8c20403))
