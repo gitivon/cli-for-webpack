@@ -1,6 +1,7 @@
-## <small>1.0.4 (2019-02-20)</small>
+## <small>1.0.4 (2019-02-21)</small>
 
 * build: add styled-components ([00f338e](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/00f338e))
+* build: support vue and react ([2f378c0](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/2f378c0))
 * build(vue): support ts ([195dd23](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/195dd23))
 * ci: add vue-project ([013afbe](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/013afbe))
 * ci: prettier ([dc011a8](https://git.tutorabc.com/fe/tutorabc/landingpage/commits/dc011a8))
